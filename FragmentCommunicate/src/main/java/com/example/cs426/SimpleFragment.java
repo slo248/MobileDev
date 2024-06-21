@@ -42,6 +42,7 @@ public class SimpleFragment extends Fragment {
     private static final int YES = 0;
     private static final int NO = 1;
     private static final int NONE = 2;
+    private static final String CHOICE = "choice";
     public int mRadioButtonChoice = NONE;
     OnFragmentInteractionListener mListener;
 
@@ -94,6 +95,16 @@ public class SimpleFragment extends Fragment {
                     }
                 });
 
+        if (getArguments().containsKey(CHOICE)) {
+            // A choice was made, so get the choice.
+            mRadioButtonChoice = getArguments().getInt(CHOICE);
+            // Check the radio button choice.
+            if (mRadioButtonChoice != NONE) {
+                radioGroup.check
+                        (radioGroup.getChildAt(mRadioButtonChoice).getId());
+            }
+        }
+
         // Return the View for the fragment's UI.
         return rootView;
     }
@@ -109,7 +120,11 @@ public class SimpleFragment extends Fragment {
         }
     }
 
-    public static SimpleFragment newInstance() {
-        return new SimpleFragment();
+    public static SimpleFragment newInstance(int choice) {
+        SimpleFragment fragment = new SimpleFragment();
+        Bundle arguments = new Bundle();
+        arguments.putInt(CHOICE, choice);
+        fragment.setArguments(arguments);
+        return fragment;
     }
 }
