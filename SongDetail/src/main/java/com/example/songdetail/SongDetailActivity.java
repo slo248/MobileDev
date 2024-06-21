@@ -33,7 +33,6 @@ import com.example.songdetail.content.SongUtils;
 public class SongDetailActivity extends AppCompatActivity {
 
     // SongItem includes the song title and detail.
-    public SongUtils.Song mSong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
