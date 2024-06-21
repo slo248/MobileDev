@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "CS426"
-include(":app")
+include(":FragmentCommunicate")
