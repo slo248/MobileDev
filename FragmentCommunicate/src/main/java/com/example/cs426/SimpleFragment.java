@@ -37,13 +37,11 @@ public class SimpleFragment extends Fragment {
     // The radio button choice has 3 states: 0 = yes, 1 = no,
     // 2 = default (no choice). Using only 0 and 1.
     interface OnFragmentInteractionListener {
-        void onRadioButtonChoice(int choice);
+        void onRadioButtonChoice(Options choice);
     }
-    private static final int YES = 0;
-    private static final int NO = 1;
-    private static final int NONE = 2;
+
     private static final String CHOICE = "choice";
-    public int mRadioButtonChoice = NONE;
+    public Options mRadioButtonChoice = Options.NONE;
     OnFragmentInteractionListener mListener;
 
     public SimpleFragment() {
@@ -76,20 +74,20 @@ public class SimpleFragment extends Fragment {
                         int index = radioGroup.indexOfChild(radioButton);
                         TextView textView =
                                 rootView.findViewById(R.id.fragment_header);
-                        switch (index) {
+                        switch (Options.fromInt(index)) {
                             case YES: // User chose "Yes."
                                 textView.setText(R.string.yes_message);
-                                mRadioButtonChoice = YES;
-                                mListener.onRadioButtonChoice(YES);
+                                mRadioButtonChoice = Options.YES;
+                                mListener.onRadioButtonChoice(Options.YES);
                                 break;
                             case NO: // User chose "No."
                                 textView.setText(R.string.no_message);
-                                mRadioButtonChoice = NO;
-                                mListener.onRadioButtonChoice(NO);
+                                mRadioButtonChoice = Options.NO;
+                                mListener.onRadioButtonChoice(Options.NO);
                                 break;
                             default: // No choice made.
-                                mRadioButtonChoice = NONE;
-                                mListener.onRadioButtonChoice(NONE);
+                                mRadioButtonChoice = Options.NONE;
+                                mListener.onRadioButtonChoice(Options.NONE);
                                 break;
                         }
                     }
@@ -97,11 +95,11 @@ public class SimpleFragment extends Fragment {
 
         if (getArguments().containsKey(CHOICE)) {
             // A choice was made, so get the choice.
-            mRadioButtonChoice = getArguments().getInt(CHOICE);
+            mRadioButtonChoice = Options.fromInt(getArguments().getInt(CHOICE));
             // Check the radio button choice.
-            if (mRadioButtonChoice != NONE) {
+            if (mRadioButtonChoice != Options.NONE) {
                 radioGroup.check
-                        (radioGroup.getChildAt(mRadioButtonChoice).getId());
+                        (radioGroup.getChildAt(mRadioButtonChoice.toInt()).getId());
             }
         }
 
@@ -120,10 +118,10 @@ public class SimpleFragment extends Fragment {
         }
     }
 
-    public static SimpleFragment newInstance(int choice) {
+    public static SimpleFragment newInstance(Options choice) {
         SimpleFragment fragment = new SimpleFragment();
         Bundle arguments = new Bundle();
-        arguments.putInt(CHOICE, choice);
+        arguments.putInt(CHOICE, choice.toInt());
         fragment.setArguments(arguments);
         return fragment;
     }

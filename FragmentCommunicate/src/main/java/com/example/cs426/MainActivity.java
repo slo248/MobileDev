@@ -27,7 +27,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements SimpleFragment.OnFragmentInteractionListener {
 
     private Button mButton;
-    private int mRadioButtonChoice = 2; // The default (no choice).
+    private Options mRadioButtonChoice = Options.NONE; // The default (no choice).
     private boolean isFragmentDisplayed = false;
 
     // Saved instance state key.
@@ -113,10 +113,10 @@ public class MainActivity extends AppCompatActivity implements SimpleFragment.On
     }
 
     @Override
-    public void onRadioButtonChoice(int choice) {
+    public void onRadioButtonChoice(Options choice) {
         // Keep the radio button choice to pass it back to the fragment.
         mRadioButtonChoice = choice;
-        Toast.makeText(this, "Choice is " + Integer.toString(choice),
+        Toast.makeText(this, "Choice is " + choice.toString(),
                 Toast.LENGTH_SHORT).show();
     }
 }
