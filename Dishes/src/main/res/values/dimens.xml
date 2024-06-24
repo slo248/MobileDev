@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <!--
   ~ Copyright (C) 2017 Google Inc.
   ~
@@ -15,10 +16,9 @@
   -->
 
 <resources>
-    <string name="app_name">Songs</string>
-    <string name="title_song_detail">Song Detail</string>
-    <string name="article_title">Beatles Anthology Vol. 1</string>
-    <string name="article_subtitle">Behind That Locked Door: Beatles Rarities!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <dimen name="item_width">200dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="padding_regular">10dp</dimen>
+    <dimen name="standard_margin">16dp</dimen>
+    <dimen name="image_size">100dp</dimen>
 </resources>

@@ -27,13 +27,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.songdetail.content.SongUtils;
+import com.example.songdetail.content.DishUtils;
 
 import java.util.List;
 
 /**
  * An activity representing a list of song titles (items). When one is
- * touched, an intent starts {@link SongDetailActivity} representing
+ * touched, an intent starts {@link DishDetailActivity} representing
  * song details.
  */
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_song_list);
+        setContentView(R.layout.activity_dish_list);
 
         // Set the toolbar as the app bar.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         // Get the song list as a RecyclerView.
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.song_list);
         recyclerView.setAdapter
-                (new SimpleItemRecyclerViewAdapter(SongUtils.SONG_ITEMS));
+                (new SimpleItemRecyclerViewAdapter(DishUtils.SONG_ITEMS));
 
         if (findViewById(R.id.song_detail_container) != null) {
             mTwoPane = true;
@@ -76,9 +76,9 @@ public class MainActivity extends AppCompatActivity {
             extends RecyclerView.Adapter
             <SimpleItemRecyclerViewAdapter.ViewHolder> {
 
-        private final List<SongUtils.Song> mValues;
+        private final List<DishUtils.Dish> mValues;
 
-        SimpleItemRecyclerViewAdapter(List<SongUtils.Song> items) {
+        SimpleItemRecyclerViewAdapter(List<DishUtils.Dish> items) {
             mValues = items;
         }
 
@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.song_list_content, parent, false);
+                    .inflate(R.layout.dish_list_content, parent, false);
             return new ViewHolder(view);
         }
 
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
          * This method implements a listener with setOnClickListener().
          * When the user taps a song title, the code checks if mTwoPane
          * is true, and if so uses a fragment to show the song detail.
-         * If mTwoPane is not true, it starts SongDetailActivity
+         * If mTwoPane is not true, it starts DishDetailActivity
          * using an intent with extra data about which song title was selected.
          *
          * @param holder   ViewHolder
@@ -114,17 +114,17 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (mTwoPane) {
-                        int selectedSong = holder.getAdapterPosition();
-                        SongDetailFragment fragment =
-                                SongDetailFragment.newInstance(selectedSong);
+                        int selectedDish = holder.getAdapterPosition();
+                        DishDetailFragment fragment =
+                                DishDetailFragment.newInstance(selectedDish);
                         getSupportFragmentManager().beginTransaction()
                                 .replace(R.id.song_detail_container, fragment)
                                 .addToBackStack(null)
                                 .commit();
                     } else {
                         Context context = v.getContext();
-                        Intent intent = new Intent(context, SongDetailActivity.class);
-                        intent.putExtra(SongUtils.SONG_ID_KEY,
+                        Intent intent = new Intent(context, DishDetailActivity.class);
+                        intent.putExtra(DishUtils.SONG_ID_KEY,
                                 holder.getAdapterPosition());
                         context.startActivity(intent);
                     }
@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
             final View mView;
             final TextView mIdView;
             final TextView mContentView;
-            SongUtils.Song mItem;
+            DishUtils.Dish mItem;
 
             ViewHolder(View view) {
                 super(view);

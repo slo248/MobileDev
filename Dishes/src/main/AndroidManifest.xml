@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.songdetail.SongDetailActivity"
+            android:name="com.example.songdetail.DishDetailActivity"
             android:label="@string/title_song_detail"
             android:parentActivityName="com.example.songdetail.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"

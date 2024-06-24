@@ -22,10 +22,10 @@ import java.util.List;
 /**
  * Helper class for providing sample song content.
  */
-public class SongUtils {
+public class DishUtils {
 
-    // An ArrayList of Songs
-    public static final List<Song> SONG_ITEMS = new ArrayList<>();
+    // An ArrayList of Dishs
+    public static final List<Dish> SONG_ITEMS = new ArrayList<>();
 
     // The ID for the index into song titles.
     public static final String SONG_ID_KEY = "item_id";
@@ -34,13 +34,13 @@ public class SongUtils {
     private static final int COUNT = 7;
 
     /**
-     * A Song item represents a song title, and song details.
+     * A Dish item represents a song title, and song details.
      */
-    public static class Song {
+    public static class Dish {
         public final String song_title;
         public final String details;
 
-        private Song(String content, String details) {
+        private Dish(String content, String details) {
             this.song_title = content;
             this.details = details;
         }
@@ -51,18 +51,18 @@ public class SongUtils {
      *
      * @param item Each song
      */
-    private static void addItem(Song item) {
+    private static void addItem(Dish item) {
         SONG_ITEMS.add(item);
     }
 
     static {
         // Fill the array with songs.
         for (int i = 0; i < COUNT; i++) {
-            addItem(createSongAtPosition(i));
+            addItem(createDishAtPosition(i));
         }
     }
 
-    private static Song createSongAtPosition(int position) {
+    private static Dish createDishAtPosition(int position) {
         String newTitle;
         String newDetail;
         switch (position) {
@@ -97,6 +97,6 @@ public class SongUtils {
                 newDetail = "One After 909\n\nA song recorded for the Let It Be album was actually worked on way back in the beginning, six years earlier. This take shows how they did it much more slowly, with an R&B feel to it.";
                 break;
         }
-        return new Song(newTitle, newDetail);
+        return new Dish(newTitle, newDetail);
     }
 }

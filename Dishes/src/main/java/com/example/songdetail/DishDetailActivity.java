@@ -23,21 +23,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import android.view.MenuItem;
-import android.widget.TextView;
 
-import com.example.songdetail.content.SongUtils;
+import com.example.songdetail.content.DishUtils;
 
 /**
  * An activity representing a single song detail screen.
  */
-public class SongDetailActivity extends AppCompatActivity {
+public class DishDetailActivity extends AppCompatActivity {
 
-    // SongItem includes the song title and detail.
+    // DishItem includes the song title and detail.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_song_detail);
+        setContentView(R.layout.activity_dish_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
         setSupportActionBar(toolbar);
 
@@ -50,10 +49,10 @@ public class SongDetailActivity extends AppCompatActivity {
         // This activity displays the detail. In a real-world scenario,
         // get the data from a content repository.
         if (savedInstanceState == null) {
-            int selectedSong =
-                    getIntent().getIntExtra(SongUtils.SONG_ID_KEY, 0);
-            SongDetailFragment fragment =
-                    SongDetailFragment.newInstance(selectedSong);
+            int selectedDish =
+                    getIntent().getIntExtra(DishUtils.SONG_ID_KEY, 0);
+            DishDetailFragment fragment =
+                    DishDetailFragment.newInstance(selectedDish);
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.song_detail_container, fragment)
                     .commit();

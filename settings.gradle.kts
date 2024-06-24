@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CS426"
 include(":FragmentCommunicate")
-include(":SongDetail")
+include(":Dishes")

@@ -9,32 +9,32 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.songdetail.content.SongUtils;
+import com.example.songdetail.content.DishUtils;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SongDetailFragment#newInstance} factory method to
+ * Use the {@link DishDetailFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SongDetailFragment extends Fragment {
+public class DishDetailFragment extends Fragment {
 
-    public SongUtils.Song mSong;
+    public DishUtils.Dish mDish;
 
-    public SongDetailFragment() {
+    public DishDetailFragment() {
         // Required empty public constructor
     }
 
-    public static SongDetailFragment newInstance() {
-        return new SongDetailFragment();
+    public static DishDetailFragment newInstance() {
+        return new DishDetailFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments().containsKey(SongUtils.SONG_ID_KEY)) {
+        if (getArguments().containsKey(DishUtils.SONG_ID_KEY)) {
             // Load the content specified by the fragment arguments.
-            mSong = SongUtils.SONG_ITEMS.get(getArguments()
-                    .getInt(SongUtils.SONG_ID_KEY));
+            mDish = DishUtils.SONG_ITEMS.get(getArguments()
+                    .getInt(DishUtils.SONG_ID_KEY));
         }
     }
 
@@ -42,19 +42,19 @@ public class SongDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView =
-                inflater.inflate(R.layout.song_detail, container, false);
-        if (mSong != null) {
+                inflater.inflate(R.layout.dish_detail, container, false);
+        if (mDish != null) {
             ((TextView) rootView.findViewById(R.id.song_detail))
-                    .setText(mSong.details);
+                    .setText(mDish.details);
         }
         return rootView;
     }
 
-    public static SongDetailFragment newInstance (int selectedSong) {
-        SongDetailFragment fragment = new SongDetailFragment();
+    public static DishDetailFragment newInstance (int selectedDish) {
+        DishDetailFragment fragment = new DishDetailFragment();
         // Set the bundle arguments for the fragment.
         Bundle arguments = new Bundle();
-        arguments.putInt(SongUtils.SONG_ID_KEY, selectedSong);
+        arguments.putInt(DishUtils.SONG_ID_KEY, selectedDish);
         fragment.setArguments(arguments);
         return fragment;
     }
