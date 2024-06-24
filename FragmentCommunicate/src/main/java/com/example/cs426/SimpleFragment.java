@@ -65,6 +65,16 @@ public class SimpleFragment extends Fragment {
                 container, false);
         final RadioGroup radioGroup = rootView.findViewById(R.id.radio_group);
 
+        if (getArguments().containsKey(CHOICE)) {
+            // A choice was made, so get the choice.
+            mRadioButtonChoice = Options.fromInt(getArguments().getInt(CHOICE));
+            // Check the radio button choice.
+            if (mRadioButtonChoice != Options.NONE) {
+                radioGroup.check
+                        (radioGroup.getChildAt(mRadioButtonChoice.toInt()).getId());
+            }
+        }
+
         // Set the radioGroup onCheckedChanged listener.
         radioGroup.setOnCheckedChangeListener(
                 new RadioGroup.OnCheckedChangeListener() {
@@ -92,16 +102,6 @@ public class SimpleFragment extends Fragment {
                         }
                     }
                 });
-
-        if (getArguments().containsKey(CHOICE)) {
-            // A choice was made, so get the choice.
-            mRadioButtonChoice = Options.fromInt(getArguments().getInt(CHOICE));
-            // Check the radio button choice.
-            if (mRadioButtonChoice != Options.NONE) {
-                radioGroup.check
-                        (radioGroup.getChildAt(mRadioButtonChoice.toInt()).getId());
-            }
-        }
 
         // Return the View for the fragment's UI.
         return rootView;
