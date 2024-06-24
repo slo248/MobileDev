@@ -39,10 +39,12 @@ public class DishUtils {
     public static class Dish {
         public final String song_title;
         public final String details;
+        public final String imageName;
 
-        private Dish(String content, String details) {
+        private Dish(String content, String details, String imageName) {
             this.song_title = content;
             this.details = details;
+            this.imageName = imageName;
         }
     }
 
@@ -65,36 +67,44 @@ public class DishUtils {
     private static Dish createDishAtPosition(int position) {
         String newTitle;
         String newDetail;
+        String imageName;
         switch (position) {
             case 0:
                 newTitle = "Pho";
                 newDetail = "Pho\n\nPho is a popular food in Vietnam. It's a type of noodle soup that consists of broth, rice noodles, and meat, usually beef or chicken. Pho is often served with a side of fresh herbs, lime, and chili.";
+                imageName = "pho";
                 break;
             case 1:
                 newTitle = "Banh Mi";
                 newDetail = "Banh Mi\n\nBanh Mi is a Vietnamese sandwich that is a fusion of meats and vegetables from native Vietnamese cuisine such as chả lụa (pork sausage), coriander leaf (cilantro), cucumber, pickled carrots, and pickled daikon combined with condiments from French cuisine such as pâté, along with jalapeño and mayonnaise.";
+                imageName = "banh_mi";
                 break;
             case 2:
                 newTitle = "Bun Cha";
                 newDetail = "Bun Cha\n\nBun Cha is a Vietnamese dish of grilled pork and noodle, which is thought to have originated from Hanoi, Vietnam. Bun cha is served with grilled fatty pork (chả) over a plate of white rice noodle (bún) and herbs with a side dish of dipping sauce.";
+                imageName = "bun_cha";
                 break;
             case 3:
                 newTitle = "Goi Cuon";
                 newDetail = "Goi Cuon\n\nGoi Cuon, also known as Vietnamese spring roll, is a Vietnamese dish traditionally consisting of pork, prawn, vegetables, bún (rice vermicelli), and other ingredients wrapped in Vietnamese bánh tráng (commonly known as rice paper or cold roll).";
+                imageName = "goi_cuon";
                 break;
             case 4:
                 newTitle = "Banh Xeo";
                 newDetail = "Banh Xeo\n\nBanh Xeo is a crispy, stuffed rice pancake popular in Vietnam. Banh Xeo is stuffed with individual preferences, and therefore, can include a variety of ingredients. A common stuffing includes pork slices, shrimps, diced green onion, mung bean, and bean sprouts.";
+                imageName = "banh_xeo";
                 break;
             case 5:
-                newTitle = "Cao Lau";
-                newDetail = "Cao Lau\n\nCao Lau is a regional Vietnamese dish made with noodles, pork, and local greens, that is found only in the town of Hội An, in the Quảng Nam Province of central Vietnam. Its unique taste and texture is achieved by using water from an ancient well, just outside of the town.";
+                newTitle = "Com Tam";
+                newDetail = "Com Tam\n\nCom Tam, also known as broken rice, is a Vietnamese dish made from rice with fractured rice grains. It's usually served with grilled pork (either ribs or shredded) over broken rice. The dish is typically served with a side of pickled vegetables, cucumber slices, and nuoc cham sauce.";
+                imageName = "com_tam";
                 break;
             default:
-                newTitle = "Cha Ca";
-                newDetail = "Cha Ca\n\nCha Ca, also known as Cha Ca La Vong, is a famous dish from Hanoi. The main ingredients are grilled fish, turmeric, dill, shrimp paste, and rice noodles.";
+                newTitle = "Bun Bo";
+                newDetail = "Bun Bo\n\nBun Bo, also known as Vietnamese Beef Noodle Soup, is a popular dish from central Vietnam. It's a hearty soup that features rice vermicelli, beef, and a flavorful broth made with beef bones and spices.";
+                imageName = "bun_bo";
                 break;
         }
-        return new Dish(newTitle, newDetail);
+        return new Dish(newTitle, newDetail, imageName);
     }
 }
