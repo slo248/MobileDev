@@ -67,34 +67,32 @@ public class DishUtils {
         String newDetail;
         switch (position) {
             case 0:
-                newTitle = "Cry for a Shadow";
-                newDetail = "Cry for a Shadow\n\nMany a Beatle fanatic " +
-                        "started down the outtake road, like I did, with a " +
-                        "first listen to this song. Originally titled “Beatle Bop” and recorded in a single session that yielded four songs (the other three featured Tony Sheridan with the Beatles as a backing band), “Cry for a Shadow” is an instrumental written by Lennon and Harrison, which makes it unique to this day. John Lennon plays rhythm guitar, George Harrison plays lead guitar, Paul McCartney plays bass, and Pete Best plays drums. The sessions were produced by Bert Kaempfert in Hamburg, Germany, during the Beatles’ second visit from April through July of 1961 to play in the Reeperbahn-section clubs.";
+                newTitle = "Pho";
+                newDetail = "Pho\n\nPho is a popular food in Vietnam. It's a type of noodle soup that consists of broth, rice noodles, and meat, usually beef or chicken. Pho is often served with a side of fresh herbs, lime, and chili.";
                 break;
             case 1:
-                newTitle = "My Bonnie - Ain’t She Sweet";
-                newDetail = "My Bonnie - Ain’t She Sweet\n\nAt the same session, the Beatles played on “My Bonnie” (the first-ever single with Beatles playing), as the backing band for English singer Tony Sheridan, originally a member of the Jets. The popularity of this single in Liverpool brought the Beatles to the attention of Brian Epstein, who worked in the NEMS record store and tried to meet demand for the disc. John Lennon then sings a fine “Ain’t She Sweet” (his first-ever released vocal).";
+                newTitle = "Banh Mi";
+                newDetail = "Banh Mi\n\nBanh Mi is a Vietnamese sandwich that is a fusion of meats and vegetables from native Vietnamese cuisine such as chả lụa (pork sausage), coriander leaf (cilantro), cucumber, pickled carrots, and pickled daikon combined with condiments from French cuisine such as pâté, along with jalapeño and mayonnaise.";
                 break;
             case 2:
-                newTitle = "Searching";
-                newDetail = "Searching\n\nA Jerry Leiber - Mike Stoller comedy song that was a hit for the Coasters in 1957, and a popular live favorite of the Beatles. The Coasters also had a hit with “Besame Mucho” and the Beatles covered that song as well. Ringo Starr had by now replaced Pete Best on drums. The high falsetto is George, who also plays a hesitant lead guitar. This is from their first audition for Decca Records in London on Jan 1., 1962, live in the studio. The Grateful Dead would later cover “Searchin” with a similar arrangement, Pigpen doing the Paul vocals. A live version is available on bootlegs featuring the Dead joined by the Beach Boys!";
+                newTitle = "Bun Cha";
+                newDetail = "Bun Cha\n\nBun Cha is a Vietnamese dish of grilled pork and noodle, which is thought to have originated from Hanoi, Vietnam. Bun cha is served with grilled fatty pork (chả) over a plate of white rice noodle (bún) and herbs with a side dish of dipping sauce.";
                 break;
             case 3:
-                newTitle = "Love Me Do";
-                newDetail = "Love Me Do\n\nAn early version of the song, played a bit slower and with more of a blues feeling, and a cool bossa-nova beat in middle. Paul had to sing while John played harmonica — a first for the group. Pete Best played drums on this version.";
+                newTitle = "Goi Cuon";
+                newDetail = "Goi Cuon\n\nGoi Cuon, also known as Vietnamese spring roll, is a Vietnamese dish traditionally consisting of pork, prawn, vegetables, bún (rice vermicelli), and other ingredients wrapped in Vietnamese bánh tráng (commonly known as rice paper or cold roll).";
                 break;
             case 4:
-                newTitle = "She Loves You – Till There Was You – Twist and Shout";
-                newDetail = "She Loves You – Till There Was You – Twist and Shout\n\nLive at the Princess Wales Theatre by Leicester Square in London, attended by the Queen. “Till There Was You” (by Meredith Wilson) is from the musical The Music Man and a hit for Peggy Lee in 1961. Before playing it, Paul said it was recorded by his favorite American group, “Sophie Tucker” (which got some laughs). At the end, John tells the people in the cheaper seats to clap their hands, and the rest to “rattle your jewelry” and then announces “Twist and Shout” (a song by Bert Russell and Phil Medley that was first recorded in 1962 by the Isley Brothers). A film of the performance shows the Queen smiling at John’s remark.";
+                newTitle = "Banh Xeo";
+                newDetail = "Banh Xeo\n\nBanh Xeo is a crispy, stuffed rice pancake popular in Vietnam. Banh Xeo is stuffed with individual preferences, and therefore, can include a variety of ingredients. A common stuffing includes pork slices, shrimps, diced green onion, mung bean, and bean sprouts.";
                 break;
             case 5:
-                newTitle = "Leave My Kitten Alone";
-                newDetail = "Leave My Kitten Alone\n\nOne of the lost Beatle songs recorded during the “Beatles For Sale” sessions but never released. This song, written by Little Willie John, Titus Turner, and James McDougal, was a 1959 R&B hit for Little Willie John and covered by Johnny Preston before the Beatles tried it and shelved it. A reference to a “big fat bulldog” may have influenced John’s “Hey Bulldog” (Yellow Submarine album), which is a similar rocker.";
+                newTitle = "Cao Lau";
+                newDetail = "Cao Lau\n\nCao Lau is a regional Vietnamese dish made with noodles, pork, and local greens, that is found only in the town of Hội An, in the Quảng Nam Province of central Vietnam. Its unique taste and texture is achieved by using water from an ancient well, just outside of the town.";
                 break;
             default:
-                newTitle = "One After 909";
-                newDetail = "One After 909\n\nA song recorded for the Let It Be album was actually worked on way back in the beginning, six years earlier. This take shows how they did it much more slowly, with an R&B feel to it.";
+                newTitle = "Cha Ca";
+                newDetail = "Cha Ca\n\nCha Ca, also known as Cha Ca La Vong, is a famous dish from Hanoi. The main ingredients are grilled fish, turmeric, dill, shrimp paste, and rice noodles.";
                 break;
         }
         return new Dish(newTitle, newDetail);
