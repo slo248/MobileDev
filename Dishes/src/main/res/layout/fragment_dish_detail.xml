@@ -1,14 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DishDetailFragment">
+    <LinearLayout
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        >
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
+            android:src="@drawable/banh_mi"
+            />
+        <TextView
+            android:id="@+id/dish_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="dish title"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+    </LinearLayout>
 
-    <!-- TODO: Update blank fragment layout -->
+
     <TextView
+        android:id="@+id/dish_detail"
+        android:padding="20dp"
+        android:textSize="15sp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="@string/hello_blank_fragment"
+        android:layout_below="@id/heading"
+        />
 
-</FrameLayout>
+</RelativeLayout>

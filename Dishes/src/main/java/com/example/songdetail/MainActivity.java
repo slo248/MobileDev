@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mItem = mValues.get(position);
             holder.mIdView.setText(String.valueOf(position + 1));
-            holder.mContentView.setText(mValues.get(position).song_title);
+            holder.mContentView.setText(mValues.get(position).title);
             holder.mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

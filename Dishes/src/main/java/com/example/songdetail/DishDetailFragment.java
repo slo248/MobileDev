@@ -1,5 +1,6 @@
 package com.example.songdetail;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.songdetail.content.DishUtils;
@@ -42,10 +44,12 @@ public class DishDetailFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView =
-                inflater.inflate(R.layout.dish_detail, container, false);
+                inflater.inflate(R.layout.fragment_dish_detail, container, false);
         if (mDish != null) {
-            ((TextView) rootView.findViewById(R.id.song_detail))
-                    .setText(mDish.details);
+            int imageResId = getResources().getIdentifier(mDish.imageName, "drawable", getActivity().getPackageName());
+            ((ImageView) rootView.findViewById(R.id.thumbnail)).setImageResource(imageResId);
+            ((TextView) rootView.findViewById(R.id.dish_title)).setText(mDish.title);
+            ((TextView) rootView.findViewById(R.id.dish_detail)).setText(mDish.details);
         }
         return rootView;
     }
