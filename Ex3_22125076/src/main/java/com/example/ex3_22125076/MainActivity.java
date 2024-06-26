@@ -69,11 +69,6 @@ public class MainActivity extends AppCompatActivity {
         if (findViewById(R.id.dish_detail_container) != null) {
             mTwoPane = true;
         }
-
-        choices = new Options[DishUtils.DISH_ITEMS.size()];
-        for (int i = 0; i < choices.length; i++) {
-            choices[i] = Options.NONE;
-        }
     }
 
     /**
