@@ -20,4 +20,17 @@
     <string name="article_title">Traditional dishes</string>
     <string name="article_subtitle">From Vietnam</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- Text for the review. -->
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="yes_message">DISH: Like</string>
+    <string name="no_message">DISH: Thanks</string>
+    <string name="question_article">Review the dish?</string>
+
+    <!-- Text for the button in Review Fragment -->
+    <string name="open">Review</string>
+    <string name="close">Close</string>
+
+    <!-- Text for the exception message in FragmentCommunicate. -->
+    <string name="exception_message">must implement OnFragmentInteractionListener</string>
 </resources>
