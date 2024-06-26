@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.songdetail"
+    namespace = "com.example.ex3_22125076"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.songdetail"
+        applicationId = "com.example.ex3_22125076"
         minSdk = 23
         targetSdk = 34
         versionCode = 1

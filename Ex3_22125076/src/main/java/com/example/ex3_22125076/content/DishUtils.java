@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.songdetail.content;
+package com.example.ex3_22125076.content;
 
 import java.util.ArrayList;
 import java.util.List;

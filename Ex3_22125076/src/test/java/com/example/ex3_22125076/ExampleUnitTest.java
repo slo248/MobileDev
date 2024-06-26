@@ -1,4 +1,4 @@
-package com.example.songdetail;
+package com.example.ex3_22125076;
 
 import org.junit.Test;
 

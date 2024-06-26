@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.songdetail;
+package com.example.ex3_22125076;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +24,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.NavUtils;
 import android.view.MenuItem;
 
-import com.example.songdetail.content.DishUtils;
+import com.example.ex3_22125076.content.DishUtils;
 
 /**
  * An activity representing a single song detail screen.

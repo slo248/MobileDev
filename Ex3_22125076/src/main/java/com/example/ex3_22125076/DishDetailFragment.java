@@ -1,6 +1,5 @@
-package com.example.songdetail;
+package com.example.ex3_22125076;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -11,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.songdetail.content.DishUtils;
+import com.example.ex3_22125076.content.DishUtils;
 
 /**
  * A simple {@link Fragment} subclass.
