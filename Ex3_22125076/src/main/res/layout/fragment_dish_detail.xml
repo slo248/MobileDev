@@ -8,6 +8,7 @@
         android:id="@+id/heading"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         >
@@ -51,5 +52,13 @@
         android:text="@string/hello_blank_fragment"
         android:layout_below="@id/heading"
         />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:name="SimpleFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        tools:layout="@layout/fragment_review"/>
 
 </RelativeLayout>
