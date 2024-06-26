@@ -1,5 +1,8 @@
 package com.example.ex3_22125076;
 
+import static com.example.ex3_22125076.Application.choices;
+import static com.example.ex3_22125076.Options.NONE;
+
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,7 +27,8 @@ import com.example.ex3_22125076.content.DishUtils;
 public class DishDetailFragment extends Fragment implements ReviewFragment.OnFragmentInteractionListener {
     public DishUtils.Dish mDish;
     private Button mButton;
-    private Options mRadioButtonChoice = Options.NONE; // The default (no choice).
+    private int dish_id;
+    private Options mRadioButtonChoice = NONE; // The default (no choice).
     private boolean isFragmentDisplayed = false;
     // Saved instance state key.
     static final String STATE_FRAGMENT = "state_of_fragment";
@@ -44,7 +48,15 @@ public class DishDetailFragment extends Fragment implements ReviewFragment.OnFra
             // Load the content specified by the fragment arguments.
             mDish = DishUtils.DISH_ITEMS.get(getArguments()
                     .getInt(DishUtils.DISH_ID_KEY));
+            mRadioButtonChoice = choices[dish_id=getArguments()
+                    .getInt(DishUtils.DISH_ID_KEY)];
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        choices[dish_id] = mRadioButtonChoice;
     }
 
     @Override

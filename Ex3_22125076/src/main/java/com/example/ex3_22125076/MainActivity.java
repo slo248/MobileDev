@@ -16,6 +16,8 @@
 
 package com.example.ex3_22125076;
 
+import static com.example.ex3_22125076.Application.choices;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -66,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
 
         if (findViewById(R.id.dish_detail_container) != null) {
             mTwoPane = true;
+        }
+
+        choices = new Options[DishUtils.DISH_ITEMS.size()];
+        for (int i = 0; i < choices.length; i++) {
+            choices[i] = Options.NONE;
         }
     }
 
