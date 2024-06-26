@@ -20,5 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "CS426"
-include(":FragmentCommunicate")
 include(":Dishes")

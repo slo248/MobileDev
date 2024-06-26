@@ -10,7 +10,6 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Dishes" />
-            <option value="$PROJECT_DIR$/FragmentCommunicate" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
