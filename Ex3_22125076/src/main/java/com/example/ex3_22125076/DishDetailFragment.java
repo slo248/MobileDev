@@ -22,10 +22,6 @@ import com.example.ex3_22125076.content.DishUtils;
  * create an instance of this fragment.
  */
 public class DishDetailFragment extends Fragment implements ReviewFragment.OnFragmentInteractionListener {
-
-    interface OnFragmentInteractionListener {
-        void onRadioButtonChoice(int index, Options choice);
-    }
     public DishUtils.Dish mDish;
     private Button mButton;
     private Options mRadioButtonChoice = Options.NONE; // The default (no choice).

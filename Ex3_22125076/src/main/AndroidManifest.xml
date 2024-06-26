@@ -23,7 +23,7 @@
         </activity>
         <activity
             android:name="com.example.ex3_22125076.DishDetailActivity"
-            android:label="@string/title_song_detail"
+            android:label="@string/title_dish_detail"
             android:parentActivityName="com.example.ex3_22125076.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:exported="false"

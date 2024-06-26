@@ -67,12 +67,6 @@
         android:showDividers="middle"
         tools:context="com.example.android.ex3_22125076.MainActivity">
 
-        <!--
-        This layout is a two-pane layout for the Songs
-        master/detail flow.
-
-        -->
-
         <androidx.recyclerview.widget.RecyclerView
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
