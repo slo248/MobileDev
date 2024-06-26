@@ -23,6 +23,9 @@ import com.example.ex3_22125076.content.DishUtils;
  */
 public class DishDetailFragment extends Fragment implements ReviewFragment.OnFragmentInteractionListener {
 
+    interface OnFragmentInteractionListener {
+        void onRadioButtonChoice(int index, Options choice);
+    }
     public DishUtils.Dish mDish;
     private Button mButton;
     private Options mRadioButtonChoice = Options.NONE; // The default (no choice).
@@ -41,10 +44,10 @@ public class DishDetailFragment extends Fragment implements ReviewFragment.OnFra
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments().containsKey(DishUtils.SONG_ID_KEY)) {
+        if (getArguments().containsKey(DishUtils.DISH_ID_KEY)) {
             // Load the content specified by the fragment arguments.
-            mDish = DishUtils.SONG_ITEMS.get(getArguments()
-                    .getInt(DishUtils.SONG_ID_KEY));
+            mDish = DishUtils.DISH_ITEMS.get(getArguments()
+                    .getInt(DishUtils.DISH_ID_KEY));
         }
     }
 
@@ -139,7 +142,7 @@ public class DishDetailFragment extends Fragment implements ReviewFragment.OnFra
         DishDetailFragment fragment = new DishDetailFragment();
         // Set the bundle arguments for the fragment.
         Bundle arguments = new Bundle();
-        arguments.putInt(DishUtils.SONG_ID_KEY, selectedDish);
+        arguments.putInt(DishUtils.DISH_ID_KEY, selectedDish);
         fragment.setArguments(arguments);
         return fragment;
     }

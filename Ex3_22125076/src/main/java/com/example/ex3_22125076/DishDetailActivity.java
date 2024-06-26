@@ -27,11 +27,11 @@ import android.view.MenuItem;
 import com.example.ex3_22125076.content.DishUtils;
 
 /**
- * An activity representing a single song detail screen.
+ * An activity representing a single dish detail screen.
  */
 public class DishDetailActivity extends AppCompatActivity {
 
-    // DishItem includes the song title and detail.
+    // DishItem includes the dish title and detail.
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,11 +50,11 @@ public class DishDetailActivity extends AppCompatActivity {
         // get the data from a content repository.
         if (savedInstanceState == null) {
             int selectedDish =
-                    getIntent().getIntExtra(DishUtils.SONG_ID_KEY, 0);
+                    getIntent().getIntExtra(DishUtils.DISH_ID_KEY, 0);
             DishDetailFragment fragment =
                     DishDetailFragment.newInstance(selectedDish);
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.song_detail_container, fragment)
+                    .add(R.id.dish_detail_container, fragment)
                     .commit();
         }
     }

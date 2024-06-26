@@ -68,6 +68,18 @@ public class ReviewFragment extends Fragment {
         if (getArguments().containsKey(CHOICE)) {
             // A choice was made, so get the choice.
             mRadioButtonChoice = Options.fromInt(getArguments().getInt(CHOICE));
+            final TextView textView =
+                    rootView.findViewById(R.id.fragment_header);
+            switch (mRadioButtonChoice) {
+                case YES:
+                    textView.setText(R.string.yes_message);
+                    break;
+                case NO:
+                    textView.setText(R.string.no_message);
+                    break;
+                default:
+                    break;
+            }
             // Check the radio button choice.
             if (mRadioButtonChoice != Options.NONE) {
                 radioGroup.check

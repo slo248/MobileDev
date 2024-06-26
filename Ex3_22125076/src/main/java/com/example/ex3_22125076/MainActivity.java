@@ -32,9 +32,9 @@ import com.example.ex3_22125076.content.DishUtils;
 import java.util.List;
 
 /**
- * An activity representing a list of song titles (items). When one is
+ * An activity representing a list of dish titles (items). When one is
  * touched, an intent starts {@link DishDetailActivity} representing
- * song details.
+ * dish details.
  */
 public class MainActivity extends AppCompatActivity {
 
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
      */
 
     /**
-     * Sets up a song list as a RecyclerView.
+     * Sets up a dish list as a RecyclerView.
      *
      * @param savedInstanceState
      */
@@ -59,18 +59,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         toolbar.setTitle(getTitle());
 
-        // Get the song list as a RecyclerView.
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.song_list);
+        // Get the dish list as a RecyclerView.
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.dish_list);
         recyclerView.setAdapter
-                (new SimpleItemRecyclerViewAdapter(DishUtils.SONG_ITEMS));
+                (new SimpleItemRecyclerViewAdapter(DishUtils.DISH_ITEMS));
 
-        if (findViewById(R.id.song_detail_container) != null) {
+        if (findViewById(R.id.dish_detail_container) != null) {
             mTwoPane = true;
         }
     }
 
     /**
-     * The ReyclerView for the song list.
+     * The ReyclerView for the dish list.
      */
     class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         /**
-         * This method inflates the layout for the song list.
+         * This method inflates the layout for the dish list.
          * @param parent ViewGroup into which the new view will be added.
          * @param viewType The view type of the new View.
          * @return
@@ -97,13 +97,13 @@ public class MainActivity extends AppCompatActivity {
 
         /**
          * This method implements a listener with setOnClickListener().
-         * When the user taps a song title, the code checks if mTwoPane
-         * is true, and if so uses a fragment to show the song detail.
+         * When the user taps a dish title, the code checks if mTwoPane
+         * is true, and if so uses a fragment to show the dish detail.
          * If mTwoPane is not true, it starts DishDetailActivity
-         * using an intent with extra data about which song title was selected.
+         * using an intent with extra data about which dish title was selected.
          *
          * @param holder   ViewHolder
-         * @param position Position of the song in the array.
+         * @param position Position of the dish in the array.
          */
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
@@ -118,13 +118,13 @@ public class MainActivity extends AppCompatActivity {
                         DishDetailFragment fragment =
                                 DishDetailFragment.newInstance(selectedDish);
                         getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.song_detail_container, fragment)
+                                .replace(R.id.dish_detail_container, fragment)
                                 .addToBackStack(null)
                                 .commit();
                     } else {
                         Context context = v.getContext();
                         Intent intent = new Intent(context, DishDetailActivity.class);
-                        intent.putExtra(DishUtils.SONG_ID_KEY,
+                        intent.putExtra(DishUtils.DISH_ID_KEY,
                                 holder.getAdapterPosition());
                         context.startActivity(intent);
                     }
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         /**
-         * Get the count of song list items.
+         * Get the count of dish list items.
          * @return
          */
         @Override

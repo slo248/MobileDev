@@ -20,21 +20,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Helper class for providing sample song content.
+ * Helper class for providing sample dish content.
  */
 public class DishUtils {
 
     // An ArrayList of Dishs
-    public static final List<Dish> SONG_ITEMS = new ArrayList<>();
+    public static final List<Dish> DISH_ITEMS = new ArrayList<>();
 
-    // The ID for the index into song titles.
-    public static final String SONG_ID_KEY = "item_id";
+    // The ID for the index into dish titles.
+    public static final String DISH_ID_KEY = "item_id";
 
-    // The number of songs.
+    // The number of dishs.
     private static final int COUNT = 7;
 
     /**
-     * A Dish item represents a song title, and song details.
+     * A Dish item represents a dish title, and dish details.
      */
     public static class Dish {
         public final String title;
@@ -51,14 +51,14 @@ public class DishUtils {
     /**
      * Add an item to the array.
      *
-     * @param item Each song
+     * @param item Each dish
      */
     private static void addItem(Dish item) {
-        SONG_ITEMS.add(item);
+        DISH_ITEMS.add(item);
     }
 
     static {
-        // Fill the array with songs.
+        // Fill the array with dishs.
         for (int i = 0; i < COUNT; i++) {
             addItem(createDishAtPosition(i));
         }
